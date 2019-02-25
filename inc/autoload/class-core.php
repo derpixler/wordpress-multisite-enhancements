@@ -1,4 +1,6 @@
 <?php
+namespace Bueltge\Multisite_Enhancement;
+
 /**
  * Core methods, there will be used.
  *
@@ -9,10 +11,16 @@
 
 add_action( 'init', array( 'Multisite_Core', 'init' ) );
 
+
+
 /**
  * Class Multisite_Core
  */
-class Multisite_Core {
+class Multisite_Core extends Abstracts {
+
+	public function __construct() {
+		$this->setSuffix();
+	}
 
 	/**
 	 * Init the class.
@@ -23,6 +31,7 @@ class Multisite_Core {
 		if ( empty( $GLOBALS[ $class ] ) ) {
 			$GLOBALS[ $class ] = new $class;
 		}
+
 	}
 
 	/**

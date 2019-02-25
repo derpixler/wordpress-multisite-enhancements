@@ -1,4 +1,8 @@
 <?php
+namespace Bueltge\Foldable_Plugin_Usage_List;
+
+use Bueltge\Multisite_Enhancement\Abstracts;
+
 /**
  * On the network plugins page, show which blogs have this plugin active.
  *
@@ -12,7 +16,7 @@ add_action( 'init', array( 'Multisite_Add_Plugin_List', 'init' ) );
 /**
  * Class Multisite_Add_Plugin_List
  */
-class Multisite_Add_Plugin_List {
+class Multisite_Add_Plugin_List extends Abstracts{
 
 	/**
 	 * On this plugin status will not show the not or activated status in the table of plugins.
